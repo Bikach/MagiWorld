@@ -20,7 +20,7 @@ class MageTest {
 		mage.attaqueBassique(adversaire);
 		assertEquals(40, adversaire.getVie());
 	}
-	
+	 
 	@Test
 	void GIVEN_inteligenceMageEgale20_WHEN_mageAttaqueSpeciale_THEN_mageViePlus40() {
 		mage.setVie(100);

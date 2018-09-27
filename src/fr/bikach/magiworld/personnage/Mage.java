@@ -38,7 +38,7 @@ public class Mage extends Personnage {
 	}
 
 	/**
-	 * Regagne sa quantité d’intelligence fois 2 en points de vie
+	 * Regagne sa quantité d’intelligence fois 2 en points de vie 
 	 * 
 	 * @param perso : le Personnage sur lequelle l'action sera réalisé
 	 */
