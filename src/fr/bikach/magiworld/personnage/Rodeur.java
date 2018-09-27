@@ -28,14 +28,13 @@ public class Rodeur extends Personnage {
 	
 	@Override
 	public void attaqueBassique(Personnage perso) {
-		// TODO Auto-generated method stub
-		
+		perso.setVie(perso.getVie() - super.getAgilite());
 	}
 
 	@Override
 	public void attaqueSpeciale(Personnage perso) {
-		// TODO Auto-generated method stub
-		
+		int ptsAgilite = perso.getNiveau() / 2;
+		perso.setAgilite(perso.getAgilite() + ptsAgilite);
 	}
 
 	
