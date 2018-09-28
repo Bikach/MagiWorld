@@ -19,9 +19,9 @@ public abstract class Personnage {
 	 * @param agilite
 	 * @param inteligence
 	 */
-	public Personnage(int niveau, int vie, int force, int agilite, int inteligence) {
+	public Personnage(int niveau, int force, int agilite, int inteligence) {
 		this.niveau = niveau;
-		this.vie = vie;
+		this.vie = niveau * 5;
 		this.force = force;
 		this.agilite = agilite;
 		this.inteligence = inteligence;

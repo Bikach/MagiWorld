@@ -10,11 +10,11 @@ import fr.bikach.magiworld.personnage.Rodeur;
 
 class MageTest {
 
-	// niveau = 50 , vie = 250, force = 20, agilité = 10, intéligence = 20.
-	Personnage mage = new Mage(50, 250, 20, 10, 20);
+	// niveau = 50 ,  force = 20, agilité = 10, intéligence = 20.
+	Personnage mage = new Mage(50, 20, 10, 20);
 	
 	@Test
-	void GIVEN_inteligenceMageEgale20_WHEN_mageAttaqueBassique_THEN_adversaireVieMoin20() {
+	public void GIVEN_inteligenceMageEgale20_WHEN_mageAttaqueBassique_THEN_adversaireVieMoin20() {
 		Personnage adversaire = new Rodeur();
 		adversaire.setVie(60);
 		mage.attaqueBassique(adversaire);
@@ -22,7 +22,7 @@ class MageTest {
 	}
 	 
 	@Test
-	void GIVEN_inteligenceMageEgale20_WHEN_mageAttaqueSpeciale_THEN_mageViePlus40() {
+	public void GIVEN_inteligenceMageEgale20_WHEN_mageAttaqueSpeciale_THEN_mageViePlus40() {
 		mage.setVie(100);
 		mage.attaqueSpeciale(mage);
 		assertEquals(140, mage.getVie());

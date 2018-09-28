@@ -9,11 +9,12 @@ import fr.bikach.magiworld.personnage.Personnage;
 import fr.bikach.magiworld.personnage.Rodeur;
 
 class RodeurTest {
-
-	Personnage rodeur = new Rodeur(50, 250, 20, 10, 20);
+	
+	// niveau = 50 ,  force = 20, agilité = 10, intéligence = 20.
+	Personnage rodeur = new Rodeur(50, 20, 10, 20);
 	
 	@Test
-	void GIVEN_agiliteRodeurEgale10_WHEN_rodeurAttaqueBassique_THEN_adversaireVieMoin10() {
+	public void GIVEN_agiliteRodeurEgale10_WHEN_rodeurAttaqueBassique_THEN_adversaireVieMoin10() {
 		Personnage adversaire = new Mage();
 		adversaire.setVie(100);
 		rodeur.attaqueBassique(adversaire);
@@ -21,7 +22,7 @@ class RodeurTest {
 	}
 	
 	@Test
-	void GIVEN_niveauRodeurEgale50_WHEN_rodeurAttaqueSpeciale_THEN_rodeurAgilitePlus25() {
+	public void GIVEN_niveauRodeurEgale50_WHEN_rodeurAttaqueSpeciale_THEN_rodeurAgilitePlus25() {
 		rodeur.attaqueSpeciale(rodeur);
 		assertEquals(35, rodeur.getAgilite());
 	}

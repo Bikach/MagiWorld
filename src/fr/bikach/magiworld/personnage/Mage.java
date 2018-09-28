@@ -23,8 +23,8 @@ public class Mage extends Personnage {
 	 * @param agilite
 	 * @param inteligence
 	 */
-	public Mage(int niveau, int vie, int force, int agilite, int inteligence) {
-		super(niveau, vie, force, agilite, inteligence);
+	public Mage(int niveau, int force, int agilite, int inteligence) {
+		super(niveau, force, agilite, inteligence);
 	}
 
 	/**
