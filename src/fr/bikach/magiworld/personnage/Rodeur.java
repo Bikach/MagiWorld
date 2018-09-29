@@ -2,9 +2,6 @@ package fr.bikach.magiworld.personnage;
 
 public class Rodeur extends Personnage {
 
-	private String strTirArc = "Tir à l'arc";
-	private String strConcentration = "Concentration";
-
 	/**
 	 * Default constructor
 	 */
@@ -46,13 +43,4 @@ public class Rodeur extends Personnage {
 		perso.setAgilite(perso.getAgilite() + ptsAgilite);
 	}
 
-	// Getter/Setter
-
-	public String getStrTirArc() {
-		return strTirArc;
-	}
-
-	public String getStrConcentration() {
-		return strConcentration;
-	}
 }

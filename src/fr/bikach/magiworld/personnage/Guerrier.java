@@ -2,9 +2,6 @@ package fr.bikach.magiworld.personnage;
 
 public class Guerrier extends Personnage {
 
-	private String strCoupEpee = "Coup d'épée";
-	private String strCoupRage = "Coup de Rage";
-
 	/**
 	 * Defaul Constructor
 	 */
@@ -50,15 +47,5 @@ public class Guerrier extends Personnage {
 		int ptsVieGuerrier = super.getForce() / 2;
 		super.setVie(super.getVie() - ptsVieGuerrier);
 	}
-
-	// Getter/Setter
-
-	public String getStrCoupEpee() {
-		return strCoupEpee;
-	}
-
-	public String getStrCoupRage() {
-		return strCoupRage;
-	}
-
+	
 }

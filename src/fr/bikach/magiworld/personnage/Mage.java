@@ -2,9 +2,6 @@ package fr.bikach.magiworld.personnage;
 
 public class Mage extends Personnage {
 
-	private String strBouleDeFeu = "Boule de feu";
-	private String strSoin = "soin";
-
 	private final int PTS_VIE_DEPART = super.getVie();
 
 	/**
@@ -66,14 +63,6 @@ public class Mage extends Personnage {
 	}
 
 	// Getter/Setter
-
-	public String getStrBouleDeFeu() {
-		return strBouleDeFeu;
-	}
-
-	public String getStrSoin() {
-		return strSoin;
-	}
 
 	public int getPTS_VIE_DEPART() {
 		return PTS_VIE_DEPART;

@@ -3,6 +3,7 @@ package fr.bikach.magiworld.personnage;
 public abstract class Personnage {
 
 	private int niveau, vie, force, agilite, inteligence;
+	private String nmAttaqueBasique, nmAttaqueSpeciale;
 
 	/**
 	 * Default constructor
@@ -76,4 +77,20 @@ public abstract class Personnage {
 		this.inteligence = inteligence;
 	}
 
+	public String getNmAttaqueBasique() {
+		return nmAttaqueBasique;
+	}
+
+	public void setNmAttaqueBasique(String nmAttaqueBasique) {
+		this.nmAttaqueBasique = nmAttaqueBasique;
+	}
+
+	public String getNmAttaqueSpeciale() {
+		return nmAttaqueSpeciale;
+	}
+
+	public void setNmAttaqueSpeciale(String nmAttaqueSpeciale) {
+		this.nmAttaqueSpeciale = nmAttaqueSpeciale;
+	}
+	
 }
