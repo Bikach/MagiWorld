@@ -53,12 +53,19 @@ public class Main {
 										+ "\n---------------------------------------------------------------------------------------");
 
 		do {
+			System.out.println("Joueur 1 (" +joueur1.getVie()+ " Vitalité) veuillez choisir votre action (1 : Attaque Basique, 2 : Attaque Spéciale)");
 			
 			
 			
+			if(joueur2.getVie() > 0) {
+				System.out.println("Joueur 2 (" +joueur2.getVie()+ " Vitalité) veuillez choisir votre action (1 : Attaque Basique, 2 : Attaque Spéciale)");
+
+				
+				
+			}
 			
 			
-		} while (joueur1.getVie() <= 0 || joueur2.getVie() <= 0);
+		} while (joueur1.getVie() <= 0 && joueur2.getVie() > 0 || joueur2.getVie() <= 0 && joueur1.getVie() > 0);
 		
 		if (joueur1.getVie() > joueur2.getVie()) 
 			System.out.println("Victoire du joueur 1");

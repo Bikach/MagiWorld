@@ -3,7 +3,7 @@ package fr.bikach.magiworld.personnage;
 public abstract class Personnage {
 
 	private int niveau, vie, force, agilite, inteligence;
-	private String nmAttaqueBasique, nmAttaqueSpeciale;
+	protected String nmAttaqueBasique, nmAttaqueSpeciale;
 
 	/**
 	 * Default constructor

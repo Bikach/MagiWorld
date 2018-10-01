@@ -20,6 +20,8 @@ public class Guerrier extends Personnage {
 	 */
 	public Guerrier(int niveau, int force, int agilite, int inteligence) {
 		super(niveau, force, agilite, inteligence);
+		super.nmAttaqueBasique = "Coup d'Épée";
+		super.nmAttaqueSpeciale = "Coup de Rage";
 	}
 
 	/**

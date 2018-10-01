@@ -57,19 +57,16 @@ public class PlateauImplementation implements IPlateau {
 			System.out.println("Haaaaaa je suis le Guerrier " +indicationJoueur+ " je possède " + (niveau*5)+ " de vitalité, "
 					+force+ " de force, " +agilite+ " d'agilité et " +inteligence+ " d'intéligence !");
 			joueur =  new Guerrier(niveau, force, agilite, inteligence);
-			this.nomAttaque(joueur, "Coup d'Épée", "Coup de Rage");
 			return joueur;
 		case 2:
 			System.out.println("Héhé je suis le Rôdeur " +indicationJoueur+ " je possède " + (niveau*5)+ " de vitalité, "
 					+force+ " de force, " +agilite+ " d'agilité et " +inteligence+ " d'intéligence !");
 			joueur = new Rodeur(niveau, force, agilite, inteligence);
-			this.nomAttaque(joueur, "Tir à l'Arc", "Concentration");
 			return joueur;
 		case 3:
 			System.out.println("Abracadabra je suis le Mage " +indicationJoueur+ " je possède " + (niveau*5)+ " de vitalité, "
 					+force+ " de force, " +agilite+ " d'agilité et " +inteligence+ " d'intéligence !");
 			joueur = new Mage(niveau, force, agilite, inteligence);
-			this.nomAttaque(joueur, "Boule de feu", "Soin");
 			return joueur;
 		default:
 			joueur = new Mage();
@@ -82,12 +79,10 @@ public class PlateauImplementation implements IPlateau {
 	public void choixAttaque(String indicationJoueur, int choix, Personnage joueur, Personnage adversaire) {
 		switch (choix) {
 		case 1:
-			System.out.println(indicationJoueur+ " utilise " +joueur.getNmAttaqueBasique());
-			joueur.attaqueBassique(adversaire);
+			this.controleAttaqueBasique(joueur, adversaire, indicationJoueur);
 			break;
 		case 2:
-			System.out.println(indicationJoueur+ " utilise " +joueur.getNmAttaqueSpeciale());
-			joueur.attaqueSpeciale(adversaire);
+			this.controleAttaqueSpeciale(joueur, adversaire, indicationJoueur);
 			break;
 		}
 	}
@@ -139,8 +134,27 @@ public class PlateauImplementation implements IPlateau {
 		return nbPts;
 	}
 	
-	private void nomAttaque(Personnage joueur, String basique, String speciale) {
-		joueur.setNmAttaqueBasique(basique);
-		joueur.setNmAttaqueSpeciale(speciale);
+	private void controleAttaqueBasique(Personnage joueur, Personnage adversaire, String indicationJoueur) {
+		int ptsAttaque = 0;
+		if(joueur instanceof Guerrier) {
+			joueur.attaqueBassique(adversaire);
+			ptsAttaque = joueur.getForce();
+		}else if (joueur instanceof Mage) {
+			joueur.attaqueBassique(adversaire);
+			ptsAttaque = joueur.getInteligence();
+		}
+		System.out.println(indicationJoueur+ " utilise " +joueur.getNmAttaqueBasique()+ " et inflige " +ptsAttaque+ " dommages."
+				+"\nJoueur 2 perd " +ptsAttaque+ " points de vie");
+
 	}
+	
+	private void controleAttaqueSpeciale(Personnage joueur, Personnage adversaire, String indicationJoueur) {
+		if(joueur instanceof Guerrier) {
+			joueur.attaqueSpeciale(adversaire);
+			System.out.println(indicationJoueur+ " utilise " +joueur.getNmAttaqueSpeciale()+ " et inflige " +joueur.getForce()*2+ " dommages.");
+			System.out.println("Joueur 2 perd " +joueur.getForce()*2+ " points de vie");
+			System.out.println("Joueur 1 perd " +joueur.getForce()/2+ " points de vie");
+		}
+	}
+	
 }

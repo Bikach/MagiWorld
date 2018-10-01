@@ -20,6 +20,8 @@ public class Rodeur extends Personnage {
 	 */
 	public Rodeur(int niveau, int force, int agilite, int inteligence) {
 		super(niveau, force, agilite, inteligence);
+		super.nmAttaqueBasique = "Tir à l'Arc";
+		super.nmAttaqueSpeciale = "Concentration";
 	}
 
 	/**
