@@ -72,7 +72,6 @@ public class PlateauImplementation implements IPlateau {
 			joueur = new Mage();
 			return joueur;
 		}
-
 	}
 
 	@Override
@@ -142,18 +141,31 @@ public class PlateauImplementation implements IPlateau {
 		}else if (joueur instanceof Mage) {
 			joueur.attaqueBassique(adversaire);
 			ptsAttaque = joueur.getInteligence();
+		}else {
+			joueur.attaqueBassique(adversaire);
+			ptsAttaque = joueur.getAgilite();
 		}
 		System.out.println(indicationJoueur+ " utilise " +joueur.getNmAttaqueBasique()+ " et inflige " +ptsAttaque+ " dommages."
-				+"\nJoueur 2 perd " +ptsAttaque+ " points de vie");
+				+"\nJoueur 2 perd " +ptsAttaque+ " points de vie\n");
 
 	}
 	
 	private void controleAttaqueSpeciale(Personnage joueur, Personnage adversaire, String indicationJoueur) {
+		int ptsAttaque = 0;
 		if(joueur instanceof Guerrier) {
 			joueur.attaqueSpeciale(adversaire);
-			System.out.println(indicationJoueur+ " utilise " +joueur.getNmAttaqueSpeciale()+ " et inflige " +joueur.getForce()*2+ " dommages.");
-			System.out.println("Joueur 2 perd " +joueur.getForce()*2+ " points de vie");
-			System.out.println("Joueur 1 perd " +joueur.getForce()/2+ " points de vie");
+			ptsAttaque = joueur.getForce();
+			System.out.println(indicationJoueur+ " utilise " +joueur.getNmAttaqueSpeciale()+ " et inflige " +ptsAttaque*2+ " dommages.");
+			System.out.println("Joueur 2 perd " +ptsAttaque*2+ " points de vie");
+			System.out.println("Joueur 1 perd " +ptsAttaque/2+ " points de vie\n");
+		}else if(joueur instanceof Mage){
+			joueur.attaqueSpeciale(joueur);
+			ptsAttaque = joueur.getInteligence();
+			System.out.println(indicationJoueur+ " utilise " +joueur.getNmAttaqueSpeciale()+ " et gagne " +ptsAttaque*2+ " en vitalité.\n");
+		}else {
+			joueur.attaqueSpeciale(joueur);
+			ptsAttaque = joueur.getNiveau();
+			System.out.println(indicationJoueur+ " utilise " +joueur.getNmAttaqueSpeciale()+ " et gagne " +ptsAttaque/2+ " en agilité.\n");
 		}
 	}
 	
